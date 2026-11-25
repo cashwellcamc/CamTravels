@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { trips } from "@/data/index";
+import TravelStats from "@/components/TravelStats";
 
 export default function HomePage() {
   const byYear = [...trips].sort((a, b) => b.year - a.year);
@@ -29,6 +30,8 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
+
+      <TravelStats trips={trips} />
     </div>
   );
 }

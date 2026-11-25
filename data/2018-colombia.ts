@@ -4,20 +4,21 @@ const trip: Trip = {
   slug: "2018-colombia",
   title: "Colombia",
   year: 2018,
+  // Antioquia region: Medellín, El Peñón, Guatapé
   bounds: [
-    [-77.0, 5.0],
-    [-73.5, 11.5],
+    [-76.0, 5.5],
+    [-74.5, 7.0],
   ],
   stops: [
     {
-      name: "Cartagena",
+      name: "Medellín",
       country: "Colombia",
-      coords: [-75.51, 10.40],
-      labelOffset: [-10, 0],
+      coords: [-75.56, 6.23],
+      labelOffset: [-10, -8],
       labelAnchor: "end",
     },
     {
-      // "La Penal Mountain" — El Peñón de Guatapé, the giant rock
+      // El Peñón de Guatapé — the giant rock
       name: "El Peñón",
       country: "Colombia",
       coords: [-75.16, 6.21],
@@ -25,7 +26,7 @@ const trip: Trip = {
       labelAnchor: "start",
     },
     {
-      // "Guadalpou town" — Guatapé, the colorful town next to El Peñón
+      // Guatapé — the colorful town next to El Peñón
       name: "Guatapé",
       country: "Colombia",
       coords: [-75.16, 6.23],
@@ -37,15 +38,15 @@ const trip: Trip = {
     {
       number: 1,
       from: "Washington DC",
-      to: "Cartagena",
+      to: "Medellín",
       mode: "flight",
       date: "2018",
     },
     {
       number: 2,
-      from: "Cartagena",
+      from: "Medellín",
       to: "El Peñón",
-      mode: "flight",
+      mode: "bus",
       date: "2018",
     },
     {

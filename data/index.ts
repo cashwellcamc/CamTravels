@@ -8,18 +8,34 @@ import westernEurope2018 from "./2018-western-europe";
 import southeastAsia2016 from "./2016-southeast-asia";
 import dominicanRepublic2016 from "./2016-dominican-republic";
 import centralNorthAmerica2013 from "./2013-central-north-america";
+import peru2012 from "./2012-peru";
+import costaRica2012 from "./2012-costa-rica";
+import oahu2023 from "./2023-oahu";
+import nicaragua2017 from "./2017-nicaragua";
+import oaxacoCoast2017 from "./2017-oaxaca-coast";
+import costaRica2018 from "./2018-costa-rica";
+import bostonMontreal2018 from "./2018-boston-montreal";
+import mexico2015 from "./2015-mexico";
 
 // Add new trips here — they'll automatically appear on the index page
 export const trips: Trip[] = [
   southeastAsia2026,
   iberianPeninsula2024,
+  oahu2023,
   crossCountry2021,
   colombia2018,
   westernEurope2018,
+  costaRica2018,
+  bostonMontreal2018,
   southeastAsia2016,
   dominicanRepublic2016,
+  mexico2015,
+  nicaragua2017,
+  oaxacoCoast2017,
   puertoRico2017,
   centralNorthAmerica2013,
+  peru2012,
+  costaRica2012,
 ];
 
 export function getTripBySlug(slug: string): Trip | undefined {
