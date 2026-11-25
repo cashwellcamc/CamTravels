@@ -221,14 +221,17 @@ export default function TripMap({ trip, width = 430, height = 640 }: Props) {
         t.textContent = String(num);
       }
 
-      // Origin legs: arc in from right edge
+      // Origin legs: arc in from the nearest map edge
+      // (left edge when DC is west of the map, right edge when east)
       trip.legs.filter((leg) => !isOnMap(leg.from)).forEach((leg) => {
         const toCoords = getStopCoords(leg.to, trip.stops);
         if (!toCoords) return;
         const toPx = projection(toCoords) as [number, number];
         if (!toPx) return;
         const color = getLegColor(leg);
-        const ex = width - PAD;
+
+        const fromLeft = toPx[0] < width / 2;
+        const ex = fromLeft ? PAD : width - PAD;
         const ey = toPx[1];
         const cx = (ex + toPx[0]) / 2;
         const cy = Math.min(ey, toPx[1]) - 24;
@@ -238,8 +241,11 @@ export default function TripMap({ trip, width = 430, height = 640 }: Props) {
         });
         drawBadge(g, cx, cy + 14, leg.number, color);
         const lbl = appendEl(g, "text", {
-          x: String(ex - 6), y: String(ey - 10),
-          "font-size": "9", "text-anchor": "end", class: "map-label-muted",
+          x: String(fromLeft ? ex + 6 : ex - 6),
+          y: String(ey - 10),
+          "font-size": "9",
+          "text-anchor": fromLeft ? "start" : "end",
+          class: "map-label-muted",
         });
         lbl.textContent = `✈ from ${leg.from}`;
       });

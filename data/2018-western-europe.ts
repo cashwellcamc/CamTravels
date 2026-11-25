@@ -2,64 +2,64 @@ import type { Trip } from "./types";
 
 const trip: Trip = {
   slug: "2018-western-europe",
-  title: "Western Europe",
+  title: "Europe",
   year: 2018,
-  // Extended north/south to fill the portrait viewport
+  // Extended to include Iceland in the upper-left
   bounds: [
-    [-2.0, 48.5],
-    [6.5, 54.0],
+    [-23.0, 48.5],
+    [7.0, 65.5],
   ],
   stops: [
+    {
+      name: "Reykjavik",
+      country: "Iceland",
+      coords: [-21.90, 64.13],
+      labelOffset: [10, 8],
+      labelAnchor: "start",
+    },
     {
       name: "London",
       country: "United Kingdom",
       coords: [-0.12, 51.51],
-      labelOffset: [-10, 0],
+      labelOffset: [-10, -8],
       labelAnchor: "end",
-    },
-    {
-      // Ferry landing — Zeebrugge port, Bruges is the city people visit
-      name: "Bruges",
-      country: "Belgium",
-      coords: [3.22, 51.21],
-      labelOffset: [10, -8],
-      labelAnchor: "start",
     },
     {
       name: "Brussels",
       country: "Belgium",
       coords: [4.35, 50.85],
-      labelOffset: [10, 8],
-      labelAnchor: "start",
+      labelOffset: [-10, 8],
+      labelAnchor: "end",
     },
     {
       name: "Amsterdam",
       country: "Netherlands",
       coords: [4.90, 52.37],
-      labelOffset: [10, -8],
-      labelAnchor: "start",
+      labelOffset: [-10, -10],
+      labelAnchor: "end",
     },
   ],
   legs: [
     {
       number: 1,
       from: "Washington DC",
-      to: "London",
+      to: "Reykjavik",
       mode: "flight",
       date: "2018",
     },
     {
       number: 2,
-      from: "London",
-      to: "Bruges",
-      mode: "ferry",
+      from: "Reykjavik",
+      to: "London",
+      mode: "flight",
       date: "2018",
     },
     {
+      // Took a ferry to Belgium then immediately transferred to a FlixBus to Brussels
       number: 3,
-      from: "Bruges",
+      from: "London",
       to: "Brussels",
-      mode: "train",
+      mode: "ferry",
       date: "2018",
     },
     {
