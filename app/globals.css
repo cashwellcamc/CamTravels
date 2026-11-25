@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Map SVG theming via CSS variables so light/dark work without JS */
+:root {
+  --map-ocean: #d4e5f7;
+  --map-land: #e8e0d8;
+  --map-border: #c8bfb0;
+  --map-city-dot: #1a1a1a;
+  --map-label: #1a1a1a;
+  --map-label-muted: #666;
+}
+
+.dark {
+  --map-ocean: #1a2535;
+  --map-land: #2c3340;
+  --map-border: #3d4555;
+  --map-city-dot: #f0ede8;
+  --map-label: #f0ede8;
+  --map-label-muted: #aaa;
+}
+
+.map-ocean {
+  fill: var(--map-ocean);
+}
+
+.map-land {
+  fill: var(--map-land);
+  stroke: var(--map-border);
+  stroke-width: 0.5;
+}
+
+.map-city-dot {
+  fill: var(--map-city-dot);
+  stroke: var(--map-ocean);
+  stroke-width: 1.5;
+}
+
+.map-label {
+  fill: var(--map-label);
+}
+
+.map-label-muted {
+  fill: var(--map-label-muted);
+}
