@@ -2,6 +2,7 @@ import type { Trip } from "./types";
 import southeastAsia2026 from "./2026-southeast-asia";
 import iberianPeninsula2024 from "./2024-iberian-peninsula";
 import crossCountry2021 from "./2021-cross-country";
+import puertoRico2017 from "./2017-puerto-rico";
 import colombia2018 from "./2018-colombia";
 import westernEurope2018 from "./2018-western-europe";
 import southeastAsia2016 from "./2016-southeast-asia";
@@ -17,6 +18,7 @@ export const trips: Trip[] = [
   westernEurope2018,
   southeastAsia2016,
   dominicanRepublic2016,
+  puertoRico2017,
   centralNorthAmerica2013,
 ];
 
