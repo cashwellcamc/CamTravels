@@ -5,6 +5,7 @@ import crossCountry2021 from "./2021-cross-country";
 import colombia2018 from "./2018-colombia";
 import westernEurope2018 from "./2018-western-europe";
 import southeastAsia2016 from "./2016-southeast-asia";
+import dominicanRepublic2016 from "./2016-dominican-republic";
 import centralNorthAmerica2013 from "./2013-central-north-america";
 
 // Add new trips here — they'll automatically appear on the index page
@@ -15,6 +16,7 @@ export const trips: Trip[] = [
   colombia2018,
   westernEurope2018,
   southeastAsia2016,
+  dominicanRepublic2016,
   centralNorthAmerica2013,
 ];
 
