@@ -1,0 +1,227 @@
+/* ── Reset / base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* ── Full-screen two-column layout ───────────────────────────────────────── */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Left sidebar ─────────────────────────────────────────────────────────── */
+.sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background: #161b27;
+  color: #e8e4de;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid #252d3f;
+}
+
+.sidebar-header {
+  padding: 22px 20px 14px;
+  border-bottom: 1px solid #252d3f;
+}
+
+.sidebar-logo {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #fff;
+}
+
+.sidebar-hint {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #6b7488;
+  letter-spacing: 0.03em;
+}
+
+/* ── Trip list ────────────────────────────────────────────────────────────── */
+.trip-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.trip-list::-webkit-scrollbar { width: 4px; }
+.trip-list::-webkit-scrollbar-track { background: transparent; }
+.trip-list::-webkit-scrollbar-thumb { background: #2e3850; border-radius: 2px; }
+
+.trip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 18px;
+  background: transparent;
+  border: none;
+  color: #b4bcd0;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.trip-item:hover {
+  background: #1e2538;
+  color: #e8e4de;
+}
+
+.trip-item--active {
+  background: #1e2a44;
+  color: #fff;
+}
+
+/* Radio-style indicator dot */
+.trip-indicator {
+  margin-top: 4px;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #3c4a6b;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.trip-indicator--on {
+  background: #d85a30;
+  border-color: #d85a30;
+}
+
+.trip-item:hover .trip-indicator:not(.trip-indicator--on) {
+  border-color: #6b7caa;
+}
+
+.trip-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.trip-item-year {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #6b7488;
+}
+
+.trip-item--active .trip-item-year {
+  color: #d85a30;
+}
+
+.trip-item-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.trip-item-meta {
+  font-size: 10px;
+  color: #4d5878;
+  margin-top: 1px;
+}
+
+.trip-item--active .trip-item-meta {
+  color: #7e8db0;
+}
+
+/* ── Legend ───────────────────────────────────────────────────────────────── */
+.sidebar-legend {
+  padding: 14px 18px 18px;
+  border-top: 1px solid #252d3f;
+}
+
+.legend-title {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #3c4a6b;
+  margin-bottom: 10px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+  font-size: 11px;
+  color: #7a8299;
+}
+
+/* ── Right: map + title ───────────────────────────────────────────────────── */
+.main-panel {
+  flex: 1 1 0%;     /* don't grow beyond flex basis */
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;     /* explicit height so children can use % */
+  position: relative;
+}
+
+/* Title bar above the map */
+.trip-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: #fff;
+  border-bottom: 1px solid #e0ddd8;
+  min-height: 44px;
+}
+
+.title-text {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+}
+
+.title-default {
+  font-size: 13px;
+  color: #9a9890;
+  letter-spacing: 0.03em;
+}
+
+.title-clear {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 300;
+  background: none;
+  border: none;
+  color: #9a9890;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.1s;
+}
+.title-clear:hover { color: #1a1a1a; }
+
+/* ── ESRI map container ───────────────────────────────────────────────────── */
+.esri-map-container {
+  flex: 1 1 0%;  /* must NOT grow past flex-basis so ESRI canvas stays bounded */
+  min-height: 0; /* allow flex to shrink below content height */
+  overflow: hidden;
+  position: relative;
+  /* Ocean colour shows through ESRI's transparent canvas */
+  background: #d4e5f7;
+}
+
+/* Override ESRI default theme background so the ocean colour shows */
+.esri-map-container .esri-view-surface,
+.esri-map-container canvas {
+  background: #d4e5f7 !important;
+}
+
+/* Keep ESRI attribution unobtrusive */
+.esri-attribution {
+  font-size: 10px !important;
+  opacity: 0.6;
+}

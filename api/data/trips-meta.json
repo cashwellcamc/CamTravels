@@ -1,0 +1,22 @@
+[
+  { "slug": "2026-southeast-asia",         "title": "Southeast Asia",          "year": 2026, "stops": 7,  "legs": 8 },
+  { "slug": "2025-chicago-montreal-quebec","title": "Chicago / Montréal / Québec","year": 2025,"stops": 3,  "legs": 4 },
+  { "slug": "2024-iberian-peninsula",      "title": "Iberian Peninsula",        "year": 2024, "stops": 3,  "legs": 4 },
+  { "slug": "2023-oahu",                   "title": "Oahu",                     "year": 2023, "stops": 4,  "legs": 3 },
+  { "slug": "2021-cross-country",          "title": "Cross Country",            "year": 2021, "stops": 7,  "legs": 8 },
+  { "slug": "2021-mexico",                 "title": "Mexico",                   "year": 2021, "stops": 3,  "legs": 4 },
+  { "slug": "2018-colombia",               "title": "Colombia",                 "year": 2018, "stops": 4,  "legs": 5 },
+  { "slug": "2018-western-europe",         "title": "Western Europe",           "year": 2018, "stops": 7,  "legs": 9 },
+  { "slug": "2018-costa-rica",             "title": "Costa Rica",               "year": 2018, "stops": 5,  "legs": 6 },
+  { "slug": "2018-boston-montreal",        "title": "Boston / Montréal",        "year": 2018, "stops": 2,  "legs": 4 },
+  { "slug": "2017-puerto-rico",            "title": "Puerto Rico",              "year": 2017, "stops": 3,  "legs": 3 },
+  { "slug": "2017-nicaragua",              "title": "Nicaragua",                "year": 2017, "stops": 4,  "legs": 5 },
+  { "slug": "2017-oaxaca-coast",           "title": "Oaxaca & Coast",           "year": 2017, "stops": 3,  "legs": 4 },
+  { "slug": "2016-southeast-asia",         "title": "Southeast Asia",           "year": 2016, "stops": 8,  "legs": 9 },
+  { "slug": "2016-dominican-republic",     "title": "Dominican Republic",       "year": 2016, "stops": 3,  "legs": 3 },
+  { "slug": "2015-mexico",                 "title": "Mexico",                   "year": 2015, "stops": 3,  "legs": 4 },
+  { "slug": "2013-central-north-america",  "title": "Central & North America",  "year": 2013, "stops": 6,  "legs": 7 },
+  { "slug": "2012-peru",                   "title": "Peru",                     "year": 2012, "stops": 5,  "legs": 6 },
+  { "slug": "2012-costa-rica",             "title": "Costa Rica",               "year": 2012, "stops": 4,  "legs": 5 },
+  { "slug": "2007-bulgaria-turkey",        "title": "Bulgaria & Turkey",        "year": 2007, "stops": 4,  "legs": 5 }
+]
